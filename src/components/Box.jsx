@@ -1,4 +1,4 @@
-const Box = ({ title, item, result }) => {
+const Box = ({ title, item, result, borderColor }) => {
   return (
     <div className="box">
       <h1>{title}</h1>

@@ -25,11 +25,12 @@ function App() {
     setUserSelect(userPick);
     let computerChoice = randomChoice();
     setComputerSelect(computerChoice);
-    let isWin = judgement(userPick, computerChoice);
-    setResult(isWin);
+    let userIsWin = judgement(userPick, computerChoice);
+    let computerIsWin = comJudgement(userIsWin);
+    setMyResult(userIsWin);
+    setComResult(computerIsWin);
   };
   const judgement = (user, computer) => {
-    
     if (user.name === computer.name) {
       return "tie";
     } else if (user.name === "rock") {
@@ -40,6 +41,11 @@ function App() {
       return computer.name === "paper" ? "win" : "lose";
     }
   };
+  const comJudgement = (userResult) => {
+    if (userResult === "tie") return "tie";
+    else if (userResult === "win") return "lose";
+    else if (userResult === "lose") return "win";
+  };
   const randomChoice = () => {
     let itemArray = Object.keys(choice);
     let randomItem = Math.floor(Math.random() * (itemArray.length - 1) + 1);
@@ -48,13 +54,24 @@ function App() {
   };
   const [userSelect, setUserSelect] = useState(choice["default"]);
   const [computerSelect, setComputerSelect] = useState(choice["default"]);
-  const [result, setResult] = useState("");
+  const [myResult, setMyResult] = useState("");
+  const [comResult, setComResult] = useState("");
 
   return (
     <div>
       <div className="main">
-        <Box title={"You"} item={userSelect} result={result} />
-        <Box title={"Computer"} item={computerSelect} />
+        <Box
+          title={"You"}
+          item={userSelect}
+          result={myResult}
+          borderColor={myResult}
+        />
+        <Box
+          title={"Computer"}
+          item={computerSelect}
+          result={comResult}
+          borderColor={comResult}
+        />
       </div>
       <div className="main">
         <button onClick={() => play("scissors")}>가위</button>
