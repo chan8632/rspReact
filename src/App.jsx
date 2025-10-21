@@ -28,17 +28,16 @@ function App() {
     let isWin = judgement(userPick, computerChoice);
     setResult(isWin);
   };
-  const judgement = (userPick, computerPick) => {
-    let userPickName = userPick.name;
-    let comPickName = computerPick.name;
-    if (userPickName === comPickName) {
+  const judgement = (user, computer) => {
+    
+    if (user.name === computer.name) {
       return "tie";
-    } else if (userPickName === "rock") {
-      return comPickName === "scissors" ? "win" : "lose";
-    } else if (userPickName === "paper") {
-      return comPickName === "rock" ? "win" : "lose";
-    } else if (userPickName === "scissors") {
-      return comPickName === "paper" ? "win" : "lose";
+    } else if (user.name === "rock") {
+      return computer.name === "scissors" ? "win" : "lose";
+    } else if (user.name === "paper") {
+      return computer.name === "rock" ? "win" : "lose";
+    } else if (user.name === "scissors") {
+      return computer.name === "paper" ? "win" : "lose";
     }
   };
   const randomChoice = () => {
