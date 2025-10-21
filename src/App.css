@@ -11,3 +11,15 @@
   width: 400px;
   height: 300px;
 }
+.win {
+  border: 5px solid green;
+  color: green;
+}
+.lose {
+  border: 5px solid red;
+  color: red;
+}
+.tie {
+  border: 5px solid black;
+  color: black;
+}
