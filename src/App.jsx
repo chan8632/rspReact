@@ -3,10 +3,8 @@ import "./App.css";
 import { useState } from "react";
 const choice = {
   initial: {
-    name: 'question',
-    img:
-    "https://agreatdream.com/wp-content/uploads/2012/04/question-mark.jpg",
-
+    name: "question",
+    img: "https://agreatdream.com/wp-content/uploads/2012/04/question-mark.jpg",
   },
   rock: {
     name: "rock",
@@ -25,12 +23,13 @@ function App() {
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
   };
-  const [userSelect, setUserSelect] = useState(choice['initial']);
+  const [userSelect, setUserSelect] = useState(choice["initial"]);
+  
   return (
     <div>
       <div className="main">
         <Box title={"You"} item={userSelect} />
-        <Box title={"Computer"} item={userSelect} />
+        <Box title={"Computer"} />
       </div>
       <div className="main">
         <button onClick={() => play("scissors")}>가위</button>
