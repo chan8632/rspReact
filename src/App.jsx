@@ -2,8 +2,8 @@ import Box from "./components/Box";
 import "./App.css";
 import { useState } from "react";
 const choice = {
-  initial: {
-    name: "question",
+  default: {
+    name: "initial",
     img: "https://agreatdream.com/wp-content/uploads/2012/04/question-mark.jpg",
   },
   rock: {
@@ -22,14 +22,23 @@ const choice = {
 function App() {
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
+    const computerPick = randomComputer();
+    setComputerSelect(choice[computerPick]);
   };
-  const [userSelect, setUserSelect] = useState(choice["initial"]);
-  
+  const randomComputer = () => {
+    const rspList = Object.keys(choice);
+    const randomIdx = Math.floor(Math.random() * (rspList.length - 1) + 1);
+    const rspPick = rspList[randomIdx];
+    return rspPick;
+  };
+  const [userSelect, setUserSelect] = useState(choice["default"]);
+  const [computerSelect, setComputerSelect] = useState(choice["default"]);
+
   return (
     <div>
       <div className="main">
         <Box title={"You"} item={userSelect} />
-        <Box title={"Computer"} />
+        <Box title={"Computer"} item={computerSelect} />
       </div>
       <div className="main">
         <button onClick={() => play("scissors")}>가위</button>
