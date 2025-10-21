@@ -22,19 +22,19 @@ const choice = {
 function App() {
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
-    const computerPick = randomComputer();
-    setComputerSelect(choice[computerPick]);
+    let computerChoice = randomChoice();
+    setComputerSelect(computerChoice);
   };
-  const randomComputer = () => {
-    const rspList = Object.keys(choice);
-    const randomIdx = Math.floor(Math.random() * (rspList.length - 1) + 1);
-    const rspPick = rspList[randomIdx];
-    return rspPick;
+  const randomChoice = () => {
+    let itemArray = Object.keys(choice);
+    let randomItem = Math.floor(Math.random() * (itemArray.length - 1) + 1);
+    let final = itemArray[randomItem];
+    return choice[final];
   };
   const [userSelect, setUserSelect] = useState(choice["default"]);
   const [computerSelect, setComputerSelect] = useState(choice["default"]);
 
-  return (
+  return (  
     <div>
       <div className="main">
         <Box title={"You"} item={userSelect} />
