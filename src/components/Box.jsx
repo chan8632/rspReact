@@ -4,7 +4,7 @@ const Box = ({ title, item }) => {
       <h1>{title}</h1>
       <img
         className="item-img"
-        src={item}
+        src={item && item.img}
       />
       <h2>Win</h2>
     </div>
