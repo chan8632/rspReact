@@ -58,7 +58,7 @@ function App() {
   const [comResult, setComResult] = useState("");
 
   return (
-    <div>
+    <div className="container">
       <div className="main">
         <Box
           title={"You"}
@@ -73,7 +73,7 @@ function App() {
           borderColor={comResult}
         />
       </div>
-      <div className="main">
+      <div className="buttonMain">
         <button onClick={() => play("scissors")}>가위</button>
         <button onClick={() => play("rock")}>바위</button>
         <button onClick={() => play("paper")}>보</button>

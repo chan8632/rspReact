@@ -1,15 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 200px;
 }
 .box {
   border: 1px solid black;
-  width: 500px;
-  height: 500px;
+  width: 250px;
+  height: 250px;
 }
 .item-img {
-  width: 400px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
+}
+.buttonMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .win {
   border: 5px solid green;
