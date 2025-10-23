@@ -1,22 +1,26 @@
 import Box from "./components/Box";
 import "./App.css";
 import { useState } from "react";
+import defaultImg from "./assets/question.jpg";
+import rockImg from "./assets/rock.jpg";
+import scissorsImg from "./assets/scissors.jpg";
+import paperImg from "./assets/paper.jpg";
 const choice = {
   default: {
     name: "initial",
-    img: "https://agreatdream.com/wp-content/uploads/2012/04/question-mark.jpg",
+    img: defaultImg,
   },
   rock: {
     name: "rock",
-    img: "https://img.freepik.com/free-psd/grey-boulder-rock-isolated-transparent-background_632498-25568.jpg?semt=ais_hybrid&w=740&q=80",
+    img: rockImg,
   },
   scissors: {
     name: "scissors",
-    img: "https://i.namu.wiki/i/PGp3JnsDa9eaMKBC1OwnSU4M0vLE0d_40ehrl0aUYum98U6tg0Nnl8W6_c0bQk2Bp9mQCMTe7eQt32pszxoQGw.webp",
+    img: scissorsImg,
   },
   paper: {
     name: "paper",
-    img: "https://img.freepik.com/free-photo/white-paper-texture_1194-2301.jpg?semt=ais_hybrid&w=740&q=80",
+    img: paperImg,
   },
 };
 function App() {
